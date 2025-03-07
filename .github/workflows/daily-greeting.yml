@@ -33,3 +33,6 @@ jobs:
       
       - name: Run
         run: node out/index.js $Env:DATA $Env:HEADERS
+        env:
+          DATA: ${{ secrets.DATA }}
+          HEADERS: ${{ secrets.HEADERS }}
