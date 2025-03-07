@@ -1,0 +1,34 @@
+name: Luogu daily greeting
+
+on:
+  branches:
+    - main
+  paths-ignore:
+    - README.md
+    - LICENSE
+    - .gitignore
+    - .github
+    - .vscode
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+jobs:
+  greeting:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Set node version 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      
+      - name: Install Deps
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Run
+        run: node out/index.js $Env:DATA $Env:HEADERS
