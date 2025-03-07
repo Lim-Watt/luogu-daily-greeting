@@ -1,14 +1,15 @@
 name: Luogu daily greeting
 
 on:
-  branches:
-    - main
-  paths-ignore:
-    - README.md
-    - LICENSE
-    - .gitignore
-    - .github
-    - .vscode
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - README.md
+      - LICENSE
+      - .gitignore
+      - .github
+      - .vscode
   schedule:
     - cron: "0 21 * * *"
   workflow_dispatch:
