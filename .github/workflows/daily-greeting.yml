@@ -32,4 +32,4 @@ jobs:
         run: npm run build
       
       - name: Run
-        run: node out/index.js ${{ secrets.DATA }} ${{ secrets.HEADERS }}
+        run: node out/index.js ${{ secrets.COOKIE }} ${{ secrets.DATA }}
